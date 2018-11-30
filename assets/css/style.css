@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #2d2d2d;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0px;
+}
+
+img {
+  margin: 0px auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3em 1fr 2fr;
+  grid-template-rows: 5em 4em auto;
+  grid-template-areas:
+    "slogan  . portrait portrait"
+    "slogan header portrait portrait"
+    "slogan content portrait portrait"
+}
+
+@media screen and (max-width: 849px) {
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "header"
+      "slogan"
+      "portrait"
+      "content"
+  }
+  
+  .header .dates {
+    position: relative;
+    text-align: right;
+    margin-right: 20px;
+  }
+  
+  #tribute-info {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .slogan {
+    writing-mode: horizontal-tb;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .header .dates {
+    font-size: .6em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .slogan {
+    writing-mode: vertical-rl;
+  }
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  position: relative;
+}
+
+#title {
+  font-weight: 900;
+  font-size: 3em;
+  justify-self: center;
+  align-self: center;
+}
+
+.header .dates {
+  font-size: .6em;
+}
+
+.header .dates span:nth-child(2) {
+  background-color: #2d2d2d;
+  color: #fcfcfc;
+  padding: 2px;
+}
+
+
+#tribute-info {
+  grid-area: content;
+  font-weight: 200;
+  text-align: center;
+}
+
+#tribute-info blockquote {
+  font-style: italic;
+  font-size: .9em;
+}
+
+#tribute-info blockquote::before {
+  content: '"';
+  font-size: 2em;
+  font-weight: 700;
+}
+
+footer {
+  font-size: .85em;
+}
+
+.slogan {
+  grid-area: slogan;
+  text-align: center;
+  text-transform: uppercase;
+  padding-right: 20px;
+  font-weight: 200;
+}
+
+.slogan span {
+  font-weight: 400;
+  padding-top: 1em;
+}
+
+#img-div {
+  grid-area: portrait;
+  align-self: end;
+  justify-self: end;
+  position: relative;
+}
+
+#image {
+  width: 100%;
+  height: auto;
+  display:block;
+  max-width: 887px;
+}
+
+#img-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fcfcfc;
+  font-weight: 300;
+  font-size: .8em;
+}
+
